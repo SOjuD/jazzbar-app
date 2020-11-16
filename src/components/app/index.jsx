@@ -9,7 +9,7 @@ function App({ productService: { getProducts } }) {
         })
   return (
     <div className="App">
-      hello react world from App!
+      hello react world from App!!
     </div>
   );
 }
