@@ -1,6 +1,3 @@
-import { ProductsProvider, ProductsConsumer } from "./products-provider";
+import ProductsContext from "./products-provider";
 
-export {
-    ProductsProvider,
-    ProductsConsumer
-}
+export default ProductsContext;

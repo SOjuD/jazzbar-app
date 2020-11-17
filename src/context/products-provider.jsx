@@ -1,11 +1,5 @@
 import React from 'react';
 
-const {
-    Provider: ProductsProvider,
-    Consumer: ProductsConsumer
-} = React.createContext();
+const ProductsContext = React.createContext();
 
-export {
-    ProductsProvider,
-    ProductsConsumer
-}
+export default ProductsContext;
