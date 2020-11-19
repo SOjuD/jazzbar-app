@@ -1,33 +1,39 @@
-import React from "react";
-import {Route, Switch} from 'react-router-dom';
+import React, {useEffect} from "react";
 import {connect} from 'react-redux';
+import {BrowserRouter as Router} from "react-router-dom";
 
 import Header from "../header";
-import {TablesPage, SinglePage, TotalPage} from '../pages';
+import Main from "../main";
+import Spinner from "../spinner";
+import {ProductService} from "../../services/";
+import {productsLoaded} from '../../actions';
+import StateContext from "../../context";
 
-function App({tables}) {
-    return (<React.Fragment>
-        <Header/>
-        <main className="App">
-            <Switch>
-                <Route path="/" exact >
-                    <TablesPage tables={tables} />
-                </Route>
-                <Route path="/single/:id" >
-                    <SinglePage />
-                </Route>
-                <Route path="/total" >
-                    <TotalPage />
-                </Route>
+function App({loading, productsLoaded, ...rest}) {
 
-            </Switch>
-        </main>
+    const {getProducts} = new ProductService();
+    useEffect(()=>{
+        getProducts()
+            .then(data => {
+                productsLoaded(data);
+            })
+    }, [])
 
-    </React.Fragment>);
+    if(loading) return <Spinner />
+    return (<Router>
+                <Header/>
+                <StateContext.Provider value={rest} >
+                    <Main />
+                </StateContext.Provider>
+            </Router>);
 }
 
-const mapStateToProps = ({ tables }) => {
-    return { tables };
+const mapStateToProps = (state) => {
+    return state;
 };
 
-export default connect(mapStateToProps)(App);
+const mapDispatchToProps = {
+    productsLoaded
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

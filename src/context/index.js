@@ -1,3 +1,3 @@
-import ProductsContext from "./products-provider";
+import StateContext from "./state-context";
 
-export default ProductsContext;
+export default StateContext;

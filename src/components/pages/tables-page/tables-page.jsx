@@ -1,19 +1,13 @@
-import React, {useContext, useEffect} from 'react';
+import React, {useContext} from 'react';
 
 import RouterLink from "../../router-link";
-import ProductsContext from '../../../context';
+import StateContext from "../../../context";
 
 import './tables-page.sass';
 
-const TablesPage = ({tables}) => {
-    const {getProducts} = useContext(ProductsContext);
+const TablesPage = () => {
 
-    useEffect(() => {
-        getProducts()
-            .then(data => {
-                console.log(data)
-            })
-    })
+    const {tables} = useContext(StateContext);
 
     return (
         <section className="tablesPage">

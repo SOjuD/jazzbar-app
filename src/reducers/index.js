@@ -1,4 +1,5 @@
 const initialState = {
+    loading: true,
     products: [],
     totalPrice: 0,
     tables: [
@@ -130,7 +131,9 @@ const reducer = (state = initialState, action) => {
     switch (action.type) {
         case 'PRODUCTS_LOADED' :
             return {
-                books: action.payload
+                ...state,
+                products: action.payload,
+                loading: false
             }
         default :
             return state;

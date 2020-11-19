@@ -1,10 +1,10 @@
-const ProductsLoaded = (books) =>{
+const productsLoaded = (books) =>{
     return {
-        type: 'BOOKS_LOADED',
+        type: 'PRODUCTS_LOADED',
         payload: books
     }
 }
 
 export {
-    ProductsLoaded
+    productsLoaded
 }

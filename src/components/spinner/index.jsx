@@ -1,9 +1,9 @@
 import React from 'react';
-import './style.css'
+import './style.sass'
 
 const Spinner = () => {
     return (
-        <div className="placeholderWrap">
+        <div className="spinnerWrap">
             <svg
                 xmlns={"http://www.w3.org/2000/svg"}
                 xmlnsXlink={"http://www.w3.org/1999/xlink" }
