@@ -1,3 +1,3 @@
-import TableCheque from "./table-list";
+import TableCheque from "./table-cheque";
 
 export default TableCheque;

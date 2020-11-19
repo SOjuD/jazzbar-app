@@ -1,12 +1,23 @@
 import React from 'react';
 
-const TableList = ({table}) => {
-    console.log(table)
+import TableChequeList from "./table-cheque-list";
+import TableChequeTotal from "./table-cheque-total";
+import {withTable} from "../hoc/";
+
+import "./table-cheque.sass";
+
+const TableCheque = ({total, sale, subtotal, id}) => {
     return (
         <div className="tablePage-cheque">
-
+            <TableChequeList />
+            <TableChequeTotal
+                subtotal={subtotal}
+                sale={sale}
+                total={total}
+                id={id}
+            />
         </div>
     );
 }
 
-export default TableList;
+export default withTable(TableCheque);

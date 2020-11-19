@@ -1,8 +1,12 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import StateContext from "../../context";
 
 const ProductList = () => {
+    const {products} = useContext(StateContext);
     return (
-        <div>Product list</div>
+        <div>
+            {`Product list ${products}`}
+        </div>
     )
 }
 
