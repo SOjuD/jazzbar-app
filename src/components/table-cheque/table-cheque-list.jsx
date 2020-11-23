@@ -1,8 +1,27 @@
 import React from "react";
+import {connect} from 'react-redux'
 
-const TableChequeList = () => {
+import {changedItemCount} from '../../actions';
+
+const TableChequeListItem = ({title, count, total, id: productId, tableId, changedItemCount}) => {
+    return(
+        <tr>
+            <th>{title}</th>
+            <td>
+                <input type="number"
+                       value={count}
+                       onChange={(evt) =>
+                           changedItemCount(tableId, productId, evt.target.value)}/>
+            </td>
+            <td>{`${total} руб`}</td>
+            <td className="delete">X</td>
+        </tr>
+    )
+}
+
+const TableChequeList = ({list, id: tableId}) => {
     return (
-        <table className="table flex-grow-1">
+        <table className="table tablePage-cheque-list flex-grow-1">
             <thead>
                 <tr>
                     <th scope="col">Название</th>
@@ -11,24 +30,23 @@ const TableChequeList = () => {
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                </tr>
+            {
+                list.map (el => {
+                    return <TableChequeListItem
+                        title={el.title}
+                        count={el.count}
+                        total={el.total}
+                        id={el.ID}
+                        key={el.ID}
+                        tableId={tableId}
+                    />
+                })
+            }
             </tbody>
         </table>
     )
 }
 
-export default TableChequeList;
+const mapDispatchToProps = {changedItemCount};
+
+export default connect(null, mapDispatchToProps)(TableChequeList);

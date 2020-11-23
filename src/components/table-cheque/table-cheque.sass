@@ -1,5 +1,23 @@
 .tablePage-cheque
   height: 100%
+  &-list
+    tr
+      position: relative
+      .delete
+        position: absolute
+        top: 50%
+        right: 0
+        text-align: center
+        border: none
+        width: 20px !important
+        font-weight: 700
+        cursor: pointer
+
+    td:last-child
+      min-width: 110px
+    input
+      width: 90px
+      padding-left: 10px
   &-total
     margin-top: 60px
     td

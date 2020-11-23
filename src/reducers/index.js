@@ -12,6 +12,30 @@ const updateSale = (table, sale) => {
     return table;
 }
 
+const updateTableList = ({products, tables}, tableIndex, productId) => {
+    const table = tables[tableIndex];
+    let product;
+    for(const cat of Object.keys(products)) {
+        if(product) break;
+        product = products[cat].find(el => el.ID === +productId);
+    }
+
+    const newProduct = {
+        ID: product.ID,
+        title: product.title,
+        count: 1,
+        total: product.price,
+        description: ''
+    };
+    return {
+        ...table,
+        list: [
+            ...table.list,
+            newProduct
+        ]
+    };
+}
+
 const sortProducts = (products) => {
     const modifyProducts = [...products];
     const sortedProducts = {};
@@ -39,6 +63,7 @@ const updateTables = (tables, newTable, index) => {
 }
 
 const reducer = (state = initialState, action) => {
+    let tableIndex,newTable, tables;
     switch (action.type) {
         case 'PRODUCTS_LOADED' :
             const products = sortProducts(action.payload);
@@ -48,13 +73,23 @@ const reducer = (state = initialState, action) => {
                 loading: false
             }
         case 'SALE_CHANGED' :
-            const index = state.tables.findIndex( el => el.id === action.tableId);
-            const newTable = updateSale(state.tables[index], action.sale);
-            const tables = updateTables(state.tables, newTable, index);
+            tableIndex = state.tables.findIndex( el => el.id === action.tableId);
+            newTable = updateSale(state.tables[tableIndex], action.sale);
+            tables = updateTables(state.tables, newTable, tableIndex);
             return {
                 ...state,
                 tables
             }
+        case 'PRODUCT_ADDED_TO_CHEQUE':
+            tableIndex = state.tables.findIndex( el => el.id === action.tableId);
+            newTable = updateTableList(state, tableIndex, action.productId);
+            tables = updateTables(state.tables, newTable, tableIndex);
+            return {
+                ...state,
+                tables
+            }
+        // case 'CHANGED_ITEM_COUNT':
+
         default :
             return state;
     }

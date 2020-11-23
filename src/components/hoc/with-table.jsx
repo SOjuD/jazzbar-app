@@ -2,11 +2,11 @@ import React, {useContext} from "react";
 import StateContext from "../../context";
 
 const withTable = (Wrapped) => {
-    return ({id}) => {
+    return (props) => {
         const {tables} = useContext(StateContext);
-        const table = tables.find( el => el.id === id);
+        const table = tables.find( el => el.id === props.id);
 
-        return <Wrapped {...table}/>
+        return <Wrapped {...table} {...props}/>
     }
 }
 

@@ -12,7 +12,7 @@ const TableChequeTotal = ({subtotal, sale, total, id, SaleChanged}) => {
             <tbody>
                 <tr>
                     <th>Подытог</th>
-                    <td>{subtotal}</td>
+                    <td>{`${subtotal} руб`}</td>
                 </tr>
                 <tr>
                     <th>Скидка %</th>
@@ -22,7 +22,7 @@ const TableChequeTotal = ({subtotal, sale, total, id, SaleChanged}) => {
                 </tr>
                 <tr>
                     <th>Итого</th>
-                    <td>{total}</td>
+                    <td>{`${total} руб`}</td>
                 </tr>
             </tbody>
         </table>
