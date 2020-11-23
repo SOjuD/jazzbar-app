@@ -12,6 +12,24 @@ const updateSale = (table, sale) => {
     return table;
 }
 
+const sortProducts = (products) => {
+    const modifyProducts = [...products];
+    const sortedProducts = {};
+    let lastCat;
+
+    modifyProducts.forEach(el => {
+        if( el.cat ) lastCat = el.cat;
+        el.cat = el.cat ? el.cat : lastCat;
+
+        if(!el.price) return;
+
+        sortedProducts[el.cat] = sortedProducts[el.cat] || [];
+        sortedProducts[el.cat].push(el);
+    })
+
+    return sortedProducts;
+}
+
 const updateTables = (tables, newTable, index) => {
     return [
         ...tables.slice(0, index),
@@ -23,9 +41,10 @@ const updateTables = (tables, newTable, index) => {
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         case 'PRODUCTS_LOADED' :
+            const products = sortProducts(action.payload);
             return {
                 ...state,
-                products: action.payload,
+                products,
                 loading: false
             }
         case 'SALE_CHANGED' :

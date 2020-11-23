@@ -2,7 +2,7 @@ import React from "react";
 
 const TableChequeList = () => {
     return (
-        <table className="table">
+        <table className="table flex-grow-1">
             <thead>
                 <tr>
                     <th scope="col">Название</th>

@@ -8,7 +8,7 @@ import "./table-cheque.sass";
 
 const TableCheque = ({total, sale, subtotal, id}) => {
     return (
-        <div className="tablePage-cheque">
+        <div className="tablePage-cheque d-flex flex-column">
             <TableChequeList />
             <TableChequeTotal
                 subtotal={subtotal}

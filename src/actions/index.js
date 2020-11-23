@@ -13,7 +13,16 @@ const SaleChanged = (sale, tableId) => {
     }
 }
 
+const productAddedToCheque = (productId, table) => {
+    return {
+        type: 'PRODUC_ADDED_TO_CHEQUE',
+        productId,
+        table
+    }
+}
+
 export {
     productsLoaded,
-    SaleChanged
+    SaleChanged,
+    productAddedToCheque
 }
