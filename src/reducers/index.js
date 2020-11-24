@@ -4,7 +4,20 @@ const roundToTwo = (num) => {
     return +(Math.round(num + "e+2") + "e-2");
 }
 
-const updateSale = (table, sale) => {
+const calcTableSubtotal = (table) => {
+
+    let subtotal = 0;
+
+    table.list.forEach( el => {
+        subtotal += el.total;
+    })
+    return {
+        ...table,
+        subtotal: roundToTwo(subtotal)
+    }
+}
+
+const calcTableTotal = (table, sale = table.sale) => {
     const ratio = (100 - sale) / 100;
     const total = roundToTwo( table.subtotal * ratio );
     table.sale = sale;
@@ -72,6 +85,8 @@ const updateTableListItem = (productInList = {}, product, productCount) => {
     }
 }
 
+
+
 const updateTableList = ({products, tables}, tableIndex, productId, productCount) => {
     const table = tables[tableIndex];
     const productIndexInList = table.list.findIndex( el => +el.ID === +productId);
@@ -79,7 +94,11 @@ const updateTableList = ({products, tables}, tableIndex, productId, productCount
     let product = findProduct(products, productId);
     let newProduct = updateTableListItem(productInList, product, productCount);
 
-    return updateTableListItems(table, newProduct, productIndexInList);
+    let newTable = updateTableListItems(table, newProduct, productIndexInList);
+    newTable = calcTableSubtotal(newTable);
+    newTable = calcTableTotal(newTable);
+
+    return newTable;
 }
 
 const sortProducts = (products) => {
@@ -120,7 +139,7 @@ const reducer = (state = initialState, action) => {
             }
         case 'SALE_CHANGED' :
             tableIndex = state.tables.findIndex( el => el.id === action.tableId);
-            newTable = updateSale(state.tables[tableIndex], action.sale);
+            newTable = calcTableTotal(state.tables[tableIndex], action.sale);
             tables = updateTables(state.tables, newTable, tableIndex);
             return {
                 ...state,
@@ -133,6 +152,7 @@ const reducer = (state = initialState, action) => {
                                     tableIndex,
                                     action.productId,
                                     action.productCount);
+            console.log(newTable)
             tables = updateTables(state.tables, newTable, tableIndex);
             return {
                 ...state,
