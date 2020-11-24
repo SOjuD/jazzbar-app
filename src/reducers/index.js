@@ -21,6 +21,17 @@ const findProduct = (products, productId) => {
 }
 
 const updateTableListItems = (table, newProduct, productIndexInList) => {
+
+    if(newProduct.count <= 0){
+        return {
+            ...table,
+            list: [
+                ...table.list.slice(0, productIndexInList),
+                ...table.list.slice(productIndexInList + 1)
+            ]
+        }
+    }
+
     if(productIndexInList < 0){
         return {
             ...table,
@@ -41,30 +52,32 @@ const updateTableListItems = (table, newProduct, productIndexInList) => {
     }
 }
 
-const updateTableListItem = (productInList = {}, product) => {
+const updateTableListItem = (productInList = {}, product, productCount) => {
 
-    const{
+    let{
         id = product.ID,
         title = product.title,
         count = 0,
-        total = 0,
-        description = ''} = productInList
+        description = ''} = productInList;
 
-        return  {
-            ID: id,
-            title: title,
-            count: count + 1,
-            total: roundToTwo(total + product.price),
-            description: description
-        }
+    if(productCount === undefined) count += 1;
+    else count = productCount;
+
+    return  {
+        ID: id,
+        title: title,
+        count: count,
+        total: roundToTwo(count * product.price),
+        description: description
+    }
 }
 
-const updateTableList = ({products, tables}, tableIndex, productId) => {
+const updateTableList = ({products, tables}, tableIndex, productId, productCount) => {
     const table = tables[tableIndex];
     const productIndexInList = table.list.findIndex( el => +el.ID === +productId);
     const productInList = table.list[productIndexInList];
     let product = findProduct(products, productId);
-    let newProduct = updateTableListItem(productInList, product);
+    let newProduct = updateTableListItem(productInList, product, productCount);
 
     return updateTableListItems(table, newProduct, productIndexInList);
 }
@@ -115,13 +128,16 @@ const reducer = (state = initialState, action) => {
             }
         case 'PRODUCT_ADDED_TO_CHEQUE':
             tableIndex = state.tables.findIndex( el => el.id === action.tableId);
-            newTable = updateTableList(state, tableIndex, action.productId);
+            newTable = updateTableList(
+                                    state,
+                                    tableIndex,
+                                    action.productId,
+                                    action.productCount);
             tables = updateTables(state.tables, newTable, tableIndex);
             return {
                 ...state,
                 tables
             }
-        // case 'CHANGED_ITEM_COUNT':
 
         default :
             return state;

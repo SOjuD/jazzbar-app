@@ -13,25 +13,18 @@ const SaleChanged = (sale, tableId) => {
     }
 }
 
-const productAddedToCheque = (productId, tableId) => {
+const productAddedToCheque = (productId, tableId, productCount) => {
     return {
         type: 'PRODUCT_ADDED_TO_CHEQUE',
         productId,
-        tableId
+        tableId,
+        productCount
     }
 }
 
-const changedItemCount = (tableId, productId, count = 1) => {
-    return {
-        type: 'CHANGED_ITEM_COUNT',
-        productId,
-        tableId
-    }
-}
 
 export {
     productsLoaded,
     SaleChanged,
     productAddedToCheque,
-    changedItemCount
 }
