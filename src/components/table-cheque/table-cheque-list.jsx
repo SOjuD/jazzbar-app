@@ -1,10 +1,10 @@
 import React from "react";
 import {connect} from 'react-redux'
 
-import {productAddedToCheque} from '../../actions';
+import {productAddedToCheque, togledModalDescription} from '../../actions';
 import TableChequeListItem from "./table-cheque-list-item";
 
-const TableChequeList = ({list, id: tableId, productAddedToCheque}) => {
+const TableChequeList = ({list, id: tableId, productAddedToCheque, togledModalDescription}) => {
     return (
         <div className="tablePage-cheque-list">
             <div className="row tablePage-cheque-list-head">
@@ -21,7 +21,9 @@ const TableChequeList = ({list, id: tableId, productAddedToCheque}) => {
                         id={el.ID}
                         key={el.ID}
                         tableId={tableId}
+                        description={el.description}
                         productAddedToCheque={productAddedToCheque}
+                        togledModalDescription={togledModalDescription}
                     />
                 })
             }
@@ -29,6 +31,6 @@ const TableChequeList = ({list, id: tableId, productAddedToCheque}) => {
     )
 }
 
-const mapDispatchToProps = {productAddedToCheque};
+const mapDispatchToProps = {productAddedToCheque, togledModalDescription};
 
 export default connect(null, mapDispatchToProps)(TableChequeList);

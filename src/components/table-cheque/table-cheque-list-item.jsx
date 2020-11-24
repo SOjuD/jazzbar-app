@@ -2,15 +2,20 @@ import React from "react";
 
 import Delete from "../delete";
 
-const TableChequeListItem = ({title, count, total, id: productId, tableId, productAddedToCheque}) => {
+const TableChequeListItem = ({title, count, total,
+                             id: productId, tableId, productAddedToCheque,
+                             togledModalDescription}) => {
     return(
         <div className="row">
-            <div className="col-5">{title}</div>
+            <div className="col-5 tableList-title"
+                onClick={()=>{togledModalDescription(tableId, productId)}}>
+                {title}
+            </div>
             <div className="col-4">
                 <input type="number"
                        value={count}
                        onChange={(evt) =>
-                           productAddedToCheque(productId, tableId, evt.target.value)}/>
+                           productAddedToCheque(tableId, productId, evt.target.value)}/>
             </div>
             <div className="col-3">{`${total} руб`}</div>
             <div

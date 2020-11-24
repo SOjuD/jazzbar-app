@@ -2,6 +2,11 @@ const initialState = {
     loading: true,
     products: [],
     totalPrice: 0,
+    descriptionParams: {
+      isOpen: false,
+      tableId: null,
+      productId: null
+    },
     tables: [
         {
             id: 'table-1',

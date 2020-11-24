@@ -11,6 +11,7 @@ const calcTableSubtotal = (table) => {
     table.list.forEach( el => {
         subtotal += el.total;
     })
+
     return {
         ...table,
         subtotal: roundToTwo(subtotal)
@@ -85,8 +86,6 @@ const updateTableListItem = (productInList = {}, product, productCount) => {
     }
 }
 
-
-
 const updateTableList = ({products, tables}, tableIndex, productId, productCount) => {
     const table = tables[tableIndex];
     const productIndexInList = table.list.findIndex( el => +el.ID === +productId);
@@ -127,6 +126,32 @@ const updateTables = (tables, newTable, index) => {
     ]
 }
 
+const togledModalDescription = (state, action) => {
+    const { tableId = null,
+            productId = null} = action;
+    console.log(action)
+    return {
+        ...state,
+        descriptionParams: {
+            ...state.descriptionParams,
+            isOpen: !state.descriptionParams.isOpen,
+            tableId,
+            productId,
+        }
+    }
+}
+
+const changedModalDescription = (state, action) => {
+    return {
+        ...state,
+        descriptionParams: {
+            ...state.descriptionParams,
+            productId: action.productId,
+            tableId: action.tableId
+        }
+    }
+}
+
 const reducer = (state = initialState, action) => {
     let tableIndex,newTable, tables;
     switch (action.type) {
@@ -136,7 +161,7 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 products,
                 loading: false
-            }
+            };
         case 'SALE_CHANGED' :
             tableIndex = state.tables.findIndex( el => el.id === action.tableId);
             newTable = calcTableTotal(state.tables[tableIndex], action.sale);
@@ -144,7 +169,7 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 tables
-            }
+            };
         case 'PRODUCT_ADDED_TO_CHEQUE':
             tableIndex = state.tables.findIndex( el => el.id === action.tableId);
             newTable = updateTableList(
@@ -152,13 +177,15 @@ const reducer = (state = initialState, action) => {
                                     tableIndex,
                                     action.productId,
                                     action.productCount);
-            console.log(newTable)
             tables = updateTables(state.tables, newTable, tableIndex);
             return {
                 ...state,
                 tables
-            }
-
+            };
+        case 'TOGLED_MODAL_DESCRIPTION':
+           return togledModalDescription(state, action);
+        case 'CHANGED_PRODUCT_DESCRIPTION':
+            return changedModalDescription(state, action);
         default :
             return state;
     }
