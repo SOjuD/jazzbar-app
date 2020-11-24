@@ -5,31 +5,28 @@ import {changedItemCount} from '../../actions';
 
 const TableChequeListItem = ({title, count, total, id: productId, tableId, changedItemCount}) => {
     return(
-        <tr>
-            <th>{title}</th>
-            <td>
+        <div className="row">
+            <div className="col-5">{title}</div>
+            <div className="col-4">
                 <input type="number"
                        value={count}
                        onChange={(evt) =>
                            changedItemCount(tableId, productId, evt.target.value)}/>
-            </td>
-            <td>{`${total} руб`}</td>
-            <td className="delete">X</td>
-        </tr>
+            </div>
+            <div className="col-3">{`${total} руб`}</div>
+            <div className="delete">X</div>
+        </div>
     )
 }
 
 const TableChequeList = ({list, id: tableId}) => {
     return (
-        <table className="table tablePage-cheque-list flex-grow-1">
-            <thead>
-                <tr>
-                    <th scope="col">Название</th>
-                    <th scope="col">Количество</th>
-                    <th scope="col">Итого</th>
-                </tr>
-            </thead>
-            <tbody>
+        <div className="tablePage-cheque-list">
+            <div className="row tablePage-cheque-list-head">
+                    <div className="col-5"><h6>Название</h6></div>
+                    <div className="col-4"><h6>Количество</h6></div>
+                    <div className="col-3"><h6>Итого</h6></div>
+            </div>
             {
                 list.map (el => {
                     return <TableChequeListItem
@@ -42,8 +39,7 @@ const TableChequeList = ({list, id: tableId}) => {
                     />
                 })
             }
-            </tbody>
-        </table>
+        </div>
     )
 }
 

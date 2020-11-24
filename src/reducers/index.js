@@ -12,28 +12,61 @@ const updateSale = (table, sale) => {
     return table;
 }
 
-const updateTableList = ({products, tables}, tableIndex, productId) => {
-    const table = tables[tableIndex];
+const findProduct = (products, productId) => {
     let product;
     for(const cat of Object.keys(products)) {
-        if(product) break;
-        product = products[cat].find(el => el.ID === +productId);
+        product = products[cat].find(el => +el.ID === +productId);
+        if(product) return product;
     }
+}
 
-    const newProduct = {
-        ID: product.ID,
-        title: product.title,
-        count: 1,
-        total: product.price,
-        description: ''
-    };
-    return {
-        ...table,
-        list: [
-            ...table.list,
-            newProduct
-        ]
-    };
+const updateTableListItems = (table, newProduct, productIndexInList) => {
+    if(productIndexInList < 0){
+        return {
+            ...table,
+            list: [
+                ...table.list,
+                newProduct
+            ]
+        }
+    }else{
+        return {
+            ...table,
+            list: [
+                ...table.list.slice(0, productIndexInList),
+                newProduct,
+                ...table.list.slice(productIndexInList + 1)
+            ]
+        }
+    }
+}
+
+const updateTableListItem = (productInList = {}, product) => {
+
+    const{
+        id = product.ID,
+        title = product.title,
+        count = 0,
+        total = 0,
+        description = ''} = productInList
+
+        return  {
+            ID: id,
+            title: title,
+            count: count + 1,
+            total: roundToTwo(total + product.price),
+            description: description
+        }
+}
+
+const updateTableList = ({products, tables}, tableIndex, productId) => {
+    const table = tables[tableIndex];
+    const productIndexInList = table.list.findIndex( el => +el.ID === +productId);
+    const productInList = table.list[productIndexInList];
+    let product = findProduct(products, productId);
+    let newProduct = updateTableListItem(productInList, product);
+
+    return updateTableListItems(table, newProduct, productIndexInList);
 }
 
 const sortProducts = (products) => {
