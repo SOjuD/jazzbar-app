@@ -1,5 +1,7 @@
 import React from "react";
 
+import Delete from "../delete";
+
 const TableChequeListItem = ({title, count, total, id: productId, tableId, productAddedToCheque}) => {
     return(
         <div className="row">
@@ -11,7 +13,11 @@ const TableChequeListItem = ({title, count, total, id: productId, tableId, produ
                            productAddedToCheque(productId, tableId, evt.target.value)}/>
             </div>
             <div className="col-3">{`${total} руб`}</div>
-            <div className="delete">X</div>
+            <div
+                className="delete"
+                onClick={ () => productAddedToCheque(productId, tableId, 0) }>
+                <Delete/>
+            </div>
         </div>
     )
 }
