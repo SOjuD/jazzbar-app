@@ -1,16 +1,22 @@
 import React from 'react';
+import {connect} from "react-redux";
 
-const TableChequeBtns = ({id}) => {
+import {closedTable} from '../../actions';
+
+const TableChequeBtns = ({id, closedTable}) => {
     return(
         <div className="row tablePage-cheque-btns">
             <div className="col-6">
                 <button className="btn btn-secondary w-100">Распечатать</button>
             </div>
             <div className="col-6">
-                <button className="btn btn-primary w-100">Закрыть стол</button>
+                <button className="btn btn-primary w-100"
+                onClick={() => closedTable(id)}>Закрыть стол</button>
             </div>
         </div>
     )
 }
 
-export default TableChequeBtns;
+const mapDispatchToProps = {closedTable}
+
+export default connect(undefined,mapDispatchToProps)(TableChequeBtns);

@@ -148,6 +148,31 @@ const togledModalDescription = (state, action) => {
     }
 }
 
+const closeTable = (state, tableId) => {
+    const {tables} = state;
+    const tableIndex = tables.findIndex(el => el.id === tableId);
+    const total = state.total + tables[tableIndex].total;
+
+    const newTable = {
+        id: tables[tableIndex].id,
+        name: tables[tableIndex].name,
+        list: [],
+        subtotal: 0,
+        sale: 0,
+        total: 0
+    }
+
+    return {
+        ...state,
+        tables: [
+            ...state.tables.slice(0, tableIndex),
+            newTable,
+            ...state.tables.slice(tableIndex + 1),
+        ],
+        total
+    };
+}
+
 export {
     roundToTwo,
     calcTableSubtotal,
@@ -158,6 +183,7 @@ export {
     updateTableList,
     sortProducts,
     updateTables,
-    togledModalDescription
+    togledModalDescription,
+    closeTable
 
 }

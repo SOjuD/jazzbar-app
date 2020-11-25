@@ -4,7 +4,8 @@ import {
     updateTableList,
     sortProducts,
     updateTables,
-    togledModalDescription} from '../functions';
+    togledModalDescription,
+    closeTable} from '../functions';
 
 const reducer = (state = initialState, action) => {
     let tableIndex,newTable, tables;
@@ -43,6 +44,8 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 tables
             };
+        case 'CLOSED_TABLE':
+            return closeTable(state, action.tableId)
         default :
             return state;
     }

@@ -1,9 +1,21 @@
 import React from 'react';
+import {connect} from 'react-redux';
 
-const TotalPage = () => {
+import './total-page.sass';
+
+const TotalPage = ({total}) => {
     return (
-        <section> Total page </section>
+        <section className="totalPage">
+            <div className="container">
+                <h3>{new Date().toLocaleDateString()}</h3>
+                <h1>{`${total} руб`}</h1>
+            </div>
+        </section>
     );
 }
 
-export default TotalPage;
+const mapStateToProps = ({total}) => {
+    return {total}
+}
+
+export default connect(mapStateToProps)(TotalPage);

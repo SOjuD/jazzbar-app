@@ -1,7 +1,7 @@
 const initialState = {
     loading: true,
     products: [],
-    totalPrice: 0,
+    total: 0,
     descriptionParams: {
       isOpen: false,
       tableId: null,
