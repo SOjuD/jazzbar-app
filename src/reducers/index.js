@@ -68,19 +68,18 @@ const updateTableListItems = (table, newProduct, productIndexInList) => {
 
 const updateTableListItem = (productInList = {}, product, productCount, newDescription) => {
 
-    let{
-        id = product.ID,
-        title = product.title,
-        count = 0,
-        description = ''} = productInList;
-
-    if(newDescription) {
+    if(newDescription !== undefined) {
         return {
             ...productInList,
             description: newDescription
         }
     }
-    console.log(newDescription)
+    let{
+        id = product.ID,
+        title = product.title,
+        count = 0,
+        description = undefined} = productInList;
+
     if(productCount === undefined) count += 1;
     else count = productCount;
 
@@ -149,6 +148,7 @@ const togledModalDescription = (state, action) => {
 
 const reducer = (state = initialState, action) => {
     let tableIndex,newTable, tables;
+
     switch (action.type) {
         case 'PRODUCTS_LOADED' :
             const products = sortProducts(action.payload);
@@ -171,7 +171,8 @@ const reducer = (state = initialState, action) => {
                                     state,
                                     tableIndex,
                                     action.productId,
-                                    action.productCount);
+                                    action.productCount,
+                                    undefined);
             tables = updateTables(state.tables, newTable, tableIndex);
             return {
                 ...state,

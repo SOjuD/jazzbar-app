@@ -15,14 +15,16 @@ const ModalDescription = ({descriptionParams, tables, changedProductDescription,
         currentDescription = currentProduct.description;
     }
     return (
-        <Modal show={isOpen}>
+        <Modal
+            onHide={togledModalDescription}
+            show={isOpen}>
             <Modal.Header>
                 <Modal.Title>Укажите комментарий к позиции</Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 <textarea
                     name="description"
-                    value={currentDescription || ''}
+                    value={currentDescription}
                     onChange={(evt) => {
                         changedProductDescription(tableId, productId, evt.target.value)
                     }}/>
