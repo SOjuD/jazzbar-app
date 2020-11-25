@@ -2,7 +2,7 @@
 
 export default class ProductService{
     getProducts = async () => {
-        const response = await fetch('http://localhost:3000/products.json');
+        const response = await fetch(`${window.location.origin}/products.json`);
         if( response.ok ){
             return await response.json();
         }else{

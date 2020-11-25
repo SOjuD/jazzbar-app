@@ -2,6 +2,7 @@ import React from 'react';
 
 import TableChequeList from "./table-cheque-list";
 import TableChequeTotal from "./table-cheque-total";
+import TableChequeBtns from "./table-cheque-btns";
 import {withTable} from "../hoc/";
 
 import "./table-cheque.sass";
@@ -18,6 +19,7 @@ const TableCheque = ({total, sale, subtotal, id, list}) => {
                 total={total}
                 id={id}
             />
+            <TableChequeBtns id={id} />
         </div>
     );
 }

@@ -39,11 +39,18 @@ const changedProductDescription = (tableId, productId, description) => {
     }
 }
 
+const closedTable = (tableId) => {
+    return {
+        type: 'CLOSED_TABLE',
+        tableId
+    }
+}
 
 export {
     productsLoaded,
     SaleChanged,
     productAddedToCheque,
     togledModalDescription,
-    changedProductDescription
+    changedProductDescription,
+    closedTable
 }
