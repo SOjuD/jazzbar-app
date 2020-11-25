@@ -2,11 +2,18 @@ import React from "react"
 import {Modal} from "react-bootstrap";
 import {connect} from 'react-redux';
 
-import {togledModalDescription} from '../../actions';
+import {togledModalDescription, changedProductDescription} from '../../actions';
 
 import './modal-description.sass';
 
-const ModalDescription = ({isOpen, tableId, productId, togledModalDescription}) => {
+const ModalDescription = ({descriptionParams, tables, changedProductDescription, togledModalDescription}) => {
+    const {isOpen, tableId, productId} = descriptionParams;
+    const currentTable = tables.find( el => el.id === tableId );
+    let currentProduct, currentDescription;
+    if(currentTable){
+        currentProduct = currentTable.list.find( el => el.ID === productId );
+        currentDescription = currentProduct.description;
+    }
     return (
         <Modal show={isOpen}>
             <Modal.Header>
@@ -15,8 +22,9 @@ const ModalDescription = ({isOpen, tableId, productId, togledModalDescription}) 
             <Modal.Body>
                 <textarea
                     name="description"
+                    value={currentDescription || ''}
                     onChange={(evt) => {
-                        togledModalDescription(tableId, productId, evt.target.value)
+                        changedProductDescription(tableId, productId, evt.target.value)
                     }}/>
             </Modal.Body>
             <Modal.Footer>
@@ -29,15 +37,11 @@ const ModalDescription = ({isOpen, tableId, productId, togledModalDescription}) 
         </Modal>
     )
 }
-const mapStateToProps = ({descriptionParams: {
-        isOpen,
-        tableId,
-        productId
-    }}) => {
-        return { isOpen, tableId, productId}
+const mapStateToProps = ({descriptionParams, tables}) => {
+        return { descriptionParams, tables }
     }
 
-const mapDispatchToProps = {togledModalDescription};
+const mapDispatchToProps = {togledModalDescription, changedProductDescription};
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(ModalDescription);

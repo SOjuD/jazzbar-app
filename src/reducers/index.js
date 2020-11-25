@@ -66,7 +66,7 @@ const updateTableListItems = (table, newProduct, productIndexInList) => {
     }
 }
 
-const updateTableListItem = (productInList = {}, product, productCount) => {
+const updateTableListItem = (productInList = {}, product, productCount, newDescription) => {
 
     let{
         id = product.ID,
@@ -74,6 +74,13 @@ const updateTableListItem = (productInList = {}, product, productCount) => {
         count = 0,
         description = ''} = productInList;
 
+    if(newDescription) {
+        return {
+            ...productInList,
+            description: newDescription
+        }
+    }
+    console.log(newDescription)
     if(productCount === undefined) count += 1;
     else count = productCount;
 
@@ -86,12 +93,12 @@ const updateTableListItem = (productInList = {}, product, productCount) => {
     }
 }
 
-const updateTableList = ({products, tables}, tableIndex, productId, productCount) => {
+const updateTableList = ({products, tables}, tableIndex, productId, productCount, newDescription) => {
     const table = tables[tableIndex];
     const productIndexInList = table.list.findIndex( el => +el.ID === +productId);
     const productInList = table.list[productIndexInList];
     let product = findProduct(products, productId);
-    let newProduct = updateTableListItem(productInList, product, productCount);
+    let newProduct = updateTableListItem(productInList, product, productCount, newDescription);
 
     let newTable = updateTableListItems(table, newProduct, productIndexInList);
     newTable = calcTableSubtotal(newTable);
@@ -129,7 +136,6 @@ const updateTables = (tables, newTable, index) => {
 const togledModalDescription = (state, action) => {
     const { tableId = null,
             productId = null} = action;
-    console.log(action)
     return {
         ...state,
         descriptionParams: {
@@ -137,17 +143,6 @@ const togledModalDescription = (state, action) => {
             isOpen: !state.descriptionParams.isOpen,
             tableId,
             productId,
-        }
-    }
-}
-
-const changedModalDescription = (state, action) => {
-    return {
-        ...state,
-        descriptionParams: {
-            ...state.descriptionParams,
-            productId: action.productId,
-            tableId: action.tableId
         }
     }
 }
@@ -185,7 +180,18 @@ const reducer = (state = initialState, action) => {
         case 'TOGLED_MODAL_DESCRIPTION':
            return togledModalDescription(state, action);
         case 'CHANGED_PRODUCT_DESCRIPTION':
-            return changedModalDescription(state, action);
+            tableIndex = state.tables.findIndex( el => el.id === action.tableId);
+            newTable = updateTableList(
+                state,
+                tableIndex,
+                action.productId,
+                undefined,
+                action.description);
+            tables = updateTables(state.tables, newTable, tableIndex);
+            return {
+                ...state,
+                tables
+            };
         default :
             return state;
     }

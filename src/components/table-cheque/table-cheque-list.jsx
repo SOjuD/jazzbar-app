@@ -4,7 +4,8 @@ import {connect} from 'react-redux'
 import {productAddedToCheque, togledModalDescription} from '../../actions';
 import TableChequeListItem from "./table-cheque-list-item";
 
-const TableChequeList = ({list, id: tableId, productAddedToCheque, togledModalDescription}) => {
+const TableChequeList = ({  list, id: tableId, productAddedToCheque,
+                            togledModalDescription}) => {
     return (
         <div className="tablePage-cheque-list">
             <div className="row tablePage-cheque-list-head">

@@ -15,7 +15,7 @@ const TableChequeListItem = ({title, count, total,
                 <input type="number"
                        value={count}
                        onChange={(evt) =>
-                           productAddedToCheque(tableId, productId, evt.target.value)}/>
+                           productAddedToCheque(productId, tableId, evt.target.value)}/>
             </div>
             <div className="col-3">{`${total} руб`}</div>
             <div
