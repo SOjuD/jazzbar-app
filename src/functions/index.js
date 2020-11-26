@@ -1,3 +1,8 @@
+import React from "react";
+import ReactDOM from 'react-dom';
+
+import ChequeToPrint from "../components/cheque-to-print/";
+
 const roundToTwo = (num) => {
     return +(Math.round(num + "e+2") + "e-2");
 }
@@ -148,10 +153,41 @@ const togledModalDescription = (state, action) => {
     }
 }
 
+const buildCheque = (table)=>{
+    const WinPrint = window.open('','','left=50,top=50,width=800,height=640,toolbar=0,scrollbars=1,status=0');
+    const CSS = `
+          <style>
+            *{
+              font-size: 20px;
+              line-height: 1.8;
+            }
+            img {
+            display: block;
+            margin: 0 auto;
+            }
+            ul{
+                border-bottom: 2px solid #c4c4c4;
+                border-top: 2px solid #c4c4c4;
+                padding: 30px 20px 30px 50px;
+                margin: 30px 0;
+            }
+        </style>`;
+    WinPrint.document.write(CSS);
+    WinPrint.document.write('<div id="root" ></div>');
+    ReactDOM.render(<ChequeToPrint table={table} />,
+        WinPrint.document.getElementById('root'));
+    WinPrint.focus();
+    WinPrint.print();
+    WinPrint.close();
+
+}
+
 const closeTable = (state, tableId) => {
     const {tables} = state;
     const tableIndex = tables.findIndex(el => el.id === tableId);
     const total = state.total + tables[tableIndex].total;
+
+    buildCheque(tables[tableIndex]);
 
     const newTable = {
         id: tables[tableIndex].id,
@@ -184,6 +220,7 @@ export {
     sortProducts,
     updateTables,
     togledModalDescription,
-    closeTable
+    closeTable,
+    buildCheque
 
 }
