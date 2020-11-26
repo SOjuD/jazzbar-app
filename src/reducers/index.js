@@ -5,7 +5,8 @@ import {
     sortProducts,
     updateTables,
     togledModalDescription,
-    closeTable} from '../functions';
+    closeTable,
+    setSessionStorage} from '../functions';
 
 const reducer = (state = initialState, action) => {
     let tableIndex,newTable, tables;
@@ -22,30 +23,30 @@ const reducer = (state = initialState, action) => {
             tableIndex = state.tables.findIndex( el => el.id === action.tableId);
             newTable = calcTableTotal(state.tables[tableIndex], action.sale);
             tables = updateTables(state.tables, newTable, tableIndex);
-            return {
+            return setSessionStorage({
                 ...state,
                 tables
-            };
+            });
         case 'PRODUCT_ADDED_TO_CHEQUE':
             tableIndex = state.tables.findIndex( el => el.id === action.tableId);
             newTable = updateTableList( state, tableIndex, action);
             tables = updateTables(state.tables, newTable, tableIndex);
-            return {
+            return setSessionStorage({
                 ...state,
                 tables
-            };
+            });
         case 'TOGLED_MODAL_DESCRIPTION':
            return togledModalDescription(state, action);
         case 'CHANGED_PRODUCT_DESCRIPTION':
             tableIndex = state.tables.findIndex( el => el.id === action.tableId);
             newTable = updateTableList( state, tableIndex, action);
             tables = updateTables(state.tables, newTable, tableIndex);
-            return {
+            return setSessionStorage({
                 ...state,
                 tables
-            };
+            });
         case 'CLOSED_TABLE':
-            return closeTable(state, action.tableId)
+            return setSessionStorage(closeTable(state, action.tableId))
         default :
             return state;
     }

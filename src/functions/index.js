@@ -7,6 +7,13 @@ const roundToTwo = (num) => {
     return +(Math.round(num + "e+2") + "e-2");
 }
 
+const setSessionStorage = (state) => {
+    const {tables, total} = state
+    window.sessionStorage.setItem('tables', JSON.stringify(tables));
+    window.sessionStorage.setItem('total', total);
+    return state
+}
+
 const calcTableSubtotal = (table) => {
 
     let subtotal = 0;
@@ -185,7 +192,7 @@ const buildCheque = (table)=>{
 const closeTable = (state, tableId) => {
     const {tables} = state;
     const tableIndex = tables.findIndex(el => el.id === tableId);
-    const total = state.total + tables[tableIndex].total;
+    const total = +state.total + +tables[tableIndex].total;
 
     buildCheque(tables[tableIndex]);
 
@@ -221,6 +228,7 @@ export {
     updateTables,
     togledModalDescription,
     closeTable,
-    buildCheque
+    buildCheque,
+    setSessionStorage
 
 }

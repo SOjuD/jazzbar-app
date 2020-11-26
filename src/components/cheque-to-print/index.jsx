@@ -4,7 +4,6 @@ import logo from './logo.svg';
 import ChequeToPrintItem from "./cheque-to-print-item";
 
 const ChequeToPrint = ({table}) => {
-    console.log(table)
     const {name, list, subtotal, sale, total} = table;
     return (
         <div className="chequeToPrint">
