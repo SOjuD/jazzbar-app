@@ -77,7 +77,7 @@ const updateTableListItems = (table, newProduct, productIndexInList) => {
 }
 
 const updateTableListItem = (tableId, productInList = {}, product, productCount, newDescription) => {
-
+    console.log(productInList)
     if(newDescription !== undefined) {
         return {
             ...productInList,
@@ -91,7 +91,7 @@ const updateTableListItem = (tableId, productInList = {}, product, productCount,
         description = undefined} = productInList;
 
     if(productCount === undefined) count += 1;
-    else count = productCount;
+    else count += productCount;
 
     const price = tableId !== 'pickup-table' ? product.price : product['price_sale'] || product.price;
 

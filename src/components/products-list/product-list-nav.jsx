@@ -2,6 +2,8 @@ import React, {useContext} from "react";
 import {Link, useRouteMatch} from 'react-router-dom';
 import StateContext from "../../context";
 
+import {Accordion, Card, Button} from "react-bootstrap";
+
 const ProductListNavElem = ({title}) => {
     const {url} = useRouteMatch();
     return (
@@ -18,13 +20,27 @@ const ProductListNavElem = ({title}) => {
 const ProductListNav = () => {
     const {products} = useContext(StateContext);
     return (
-        <div className="row productList-nav align-content-start">
-            {
-                Object.keys(products).map((el, idx) => {
-                    return <ProductListNavElem title={el} key={idx}/>
-                })
-            }
-        </div>
+        <Accordion defaultActiveKey="0">
+            <Card>
+                <Card.Header>
+                    <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                        Категории
+                    </Accordion.Toggle>
+                </Card.Header>
+                <Accordion.Collapse eventKey="0">
+                    <Card.Body>
+                        <div className="row productList-nav align-content-start">
+                            {
+                                Object.keys(products).map((el, idx) => {
+                                    return <ProductListNavElem title={el} key={idx}/>
+                                })
+                            }
+                        </div>
+                    </Card.Body>
+                </Accordion.Collapse>
+            </Card>
+        </Accordion>
+
     )
 }
 
