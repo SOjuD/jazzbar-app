@@ -77,7 +77,7 @@ const updateTableListItems = (table, newProduct, productIndexInList) => {
 }
 
 const updateTableListItem = (tableId, productInList = {}, product, productCount, newDescription) => {
-    console.log(productInList)
+
     if(newDescription !== undefined) {
         return {
             ...productInList,
