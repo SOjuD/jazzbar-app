@@ -27,7 +27,7 @@ const ProductListTabs = ({products, productAddedToCheque}) => {
                         <Route path={`${path}/${cat}`} key={`cat-${idx}`}>
                         {
                             products[cat].map(el =>{
-                                return <ProductElem product={el} key={el.ID}/>
+                                return <ProductElem product={el} key={el.id}/>
                             })
                         }
                         </Route>

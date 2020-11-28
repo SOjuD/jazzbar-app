@@ -39,7 +39,7 @@ const calcTableTotal = (table, sale = table.sale) => {
 const findProduct = (products, productId) => {
     let product;
     for(const cat of Object.keys(products)) {
-        product = products[cat].find(el => +el.ID === +productId);
+        product = products[cat].find(el => +el.id === +productId);
         if(product) return product;
     }
 }
@@ -85,7 +85,7 @@ const updateTableListItem = (tableId, productInList = {}, product, productCount,
         }
     }
     let{
-        id = product.ID,
+        id = product.id,
         title = product.title,
         count = 0,
         description = undefined} = productInList;
@@ -96,7 +96,7 @@ const updateTableListItem = (tableId, productInList = {}, product, productCount,
     const price = tableId !== 'pickup-table' ? product.price : product['price_sale'] || product.price;
 
     return  {
-        ID: id,
+        id: id,
         title: title,
         count: count,
         total: roundToTwo(count * price),
@@ -107,7 +107,7 @@ const updateTableListItem = (tableId, productInList = {}, product, productCount,
 const updateTableList = ({products, tables}, tableIndex, action) => {
     const {productId, productCount, description, tableId} = action;
     const table = tables[tableIndex];
-    const productIndexInList = table.list.findIndex( el => +el.ID === +productId);
+    const productIndexInList = table.list.findIndex( el => +el.id === +productId);
     const productInList = table.list[productIndexInList];
     let product = findProduct(products, productId);
 

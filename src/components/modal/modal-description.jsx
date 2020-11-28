@@ -11,7 +11,7 @@ const ModalDescription = ({descriptionParams, tables, changedProductDescription,
     const currentTable = tables.find( el => el.id === tableId );
     let currentProduct, currentDescription;
     if(currentTable){
-        currentProduct = currentTable.list.find( el => el.ID === productId );
+        currentProduct = currentTable.list.find( el => el.id === productId );
         currentDescription = currentProduct.description;
     }
     return (

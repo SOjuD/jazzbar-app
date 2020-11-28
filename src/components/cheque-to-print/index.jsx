@@ -10,7 +10,7 @@ const ChequeToPrint = ({table}) => {
             <img src={logo} className="chequeToPrint-logo" alt="jazzCafe"/>
             <ul>
                 {
-                    list.map( item => <ChequeToPrintItem item={item} key={item.ID} />)
+                    list.map( item => <ChequeToPrintItem item={item} key={item.id} />)
                 }
             </ul>
             <div className="chequeToPrint-title">Стол: {name}</div>
