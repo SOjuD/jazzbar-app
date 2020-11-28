@@ -123,13 +123,8 @@ const updateTableList = ({products, tables}, tableIndex, action) => {
 const sortProducts = (products) => {
     const modifyProducts = [...products];
     const sortedProducts = {};
-    let lastCats;
 
     modifyProducts.forEach(el => {
-        if( el.cats ) lastCats = el.cats;
-        el.cats = el.cats ? el.cats : lastCats;
-
-        if(!el.price) return;
         const cats = el.cats.split(', ');
         cats.forEach(cat => {
             sortedProducts[cat] = sortedProducts[cat] || [];
