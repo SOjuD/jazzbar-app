@@ -33,6 +33,7 @@ const calcTableTotal = (table, sale = table.sale) => {
     const total = roundToTwo( table.subtotal * ratio );
     table.sale = sale;
     table.total = total;
+    table.saleCapacity = roundToTwo(table.subtotal - table.total);
     return table;
 }
 

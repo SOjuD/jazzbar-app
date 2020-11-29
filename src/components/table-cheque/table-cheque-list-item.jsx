@@ -28,7 +28,7 @@ const TableChequeListItem = ({title, count, total,
             <div className="col-3">{`${total} руб`}</div>
             <div
                 className="delete"
-                onClick={ () => productAddedToCheque(productId, tableId, -10000) }>
+                onClick={ () => productAddedToCheque(productId, tableId, -count) }>
                 <Delete/>
             </div>
         </div>

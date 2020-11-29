@@ -7,7 +7,7 @@ import {withTable} from "../hoc/";
 
 import "./table-cheque.sass";
 
-const TableCheque = ({total, sale, subtotal, id, list}) => {
+const TableCheque = ({total, sale, subtotal, saleCapacity, id, list}) => {
     return (
         <div className="tablePage-cheque d-flex flex-column justify-content-between">
             <TableChequeList
@@ -18,6 +18,7 @@ const TableCheque = ({total, sale, subtotal, id, list}) => {
                 sale={sale}
                 total={total}
                 id={id}
+                saleCapacity={saleCapacity}
             />
             <TableChequeBtns id={id} />
         </div>

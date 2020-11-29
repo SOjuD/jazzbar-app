@@ -5,6 +5,7 @@ const newtTables = [
         list: [],
         subtotal: 0,
         sale: 0,
+        saleCapacity: 0,
         total: 0
     },
     {
@@ -13,6 +14,7 @@ const newtTables = [
         list: [],
         subtotal: 0,
         sale: 0,
+        saleCapacity: 0,
         total: 0
     },
     {
@@ -21,6 +23,7 @@ const newtTables = [
         list: [],
         subtotal: 0,
         sale: 0,
+        saleCapacity: 0,
         total: 0
     },
     {
@@ -29,6 +32,7 @@ const newtTables = [
         list: [],
         subtotal: 0,
         sale: 0,
+        saleCapacity: 0,
         total: 0
     },
     {
@@ -37,6 +41,7 @@ const newtTables = [
         list: [],
         subtotal: 0,
         sale: 0,
+        saleCapacity: 0,
         total: 0
     },
     {
@@ -53,6 +58,7 @@ const newtTables = [
         list: [],
         subtotal: 0,
         sale: 0,
+        saleCapacity: 0,
         total: 0
     },
     {
@@ -61,6 +67,7 @@ const newtTables = [
         list: [],
         subtotal: 0,
         sale: 0,
+        saleCapacity: 0,
         total: 0
     },
     {
@@ -69,6 +76,7 @@ const newtTables = [
         list: [],
         subtotal: 0,
         sale: 0,
+        saleCapacity: 0,
         total: 0
     },
     {
@@ -77,6 +85,7 @@ const newtTables = [
         list: [],
         subtotal: 0,
         sale: 0,
+        saleCapacity: 0,
         total: 0
     },
     {
@@ -85,6 +94,7 @@ const newtTables = [
         list: [],
         subtotal: 0,
         sale: 0,
+        saleCapacity: 0,
         total: 0
     },
     {
@@ -93,6 +103,7 @@ const newtTables = [
         list: [],
         subtotal: 0,
         sale: 0,
+        saleCapacity: 0,
         total: 0
     },
     {
@@ -101,6 +112,7 @@ const newtTables = [
         list: [],
         subtotal: 0,
         sale: 0,
+        saleCapacity: 0,
         total: 0
     },
     {
@@ -109,6 +121,7 @@ const newtTables = [
         list: [],
         subtotal: 0,
         sale: 0,
+        saleCapacity: 0,
         total: 0
     },
     {
@@ -117,6 +130,7 @@ const newtTables = [
         list: [],
         subtotal: 0,
         sale: 0,
+        saleCapacity: 0,
         total: 0
     },
 

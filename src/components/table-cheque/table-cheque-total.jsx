@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 
 import {SaleChanged} from '../../actions';
 
-const TableChequeTotal = ({subtotal, sale, total, id, SaleChanged}) => {
+const TableChequeTotal = ({subtotal, sale, total, id, saleCapacity, SaleChanged}) => {
     const changeSale = (evt) => {
         SaleChanged(evt.target.value, id);
     }
@@ -15,9 +15,13 @@ const TableChequeTotal = ({subtotal, sale, total, id, SaleChanged}) => {
                     <td>{`${subtotal} руб`}</td>
                 </tr>
                 <tr>
-                    <th>Скидка %</th>
-                    <td>
+                    <th>
+                        Скидка
                         <input type="number" value={sale} onChange={changeSale}/>
+                        %
+                    </th>
+                    <td>
+                        {`${saleCapacity} руб`}
                     </td>
                 </tr>
                 <tr>
