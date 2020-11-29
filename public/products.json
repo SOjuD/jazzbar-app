@@ -107,77 +107,77 @@
   {
     "id": 199,
     "title": "Кунсей маки",
-    "price_sale": "",
+    "price_sale": null,
     "price": 6.5,
     "cats": "Суши"
   },
   {
     "id": 202,
     "title": "Капа мака",
-    "price_sale": "",
+    "price_sale": null,
     "price": 6.5,
     "cats": "Суши"
   },
   {
     "id": 204,
     "title": "Сяки маки",
-    "price_sale": "",
+    "price_sale": null,
     "price": 7.9,
     "cats": "Суши"
   },
   {
     "id": 205,
     "title": "Филадельфия с огурцом и угрем",
-    "price_sale": "",
+    "price_sale": null,
     "price": 12.9,
     "cats": "Суши"
   },
   {
     "id": 206,
     "title": "Филадельфия классик",
-    "price_sale": "",
+    "price_sale": null,
     "price": 10.9,
     "cats": "Суши"
   },
   {
     "id": 207,
     "title": "эби маки с лососем",
-    "price_sale": "",
+    "price_sale": null,
     "price": 10.3,
     "cats": "Суши"
   },
   {
     "id": 210,
     "title": "Сэн Сэй",
-    "price_sale": "",
+    "price_sale": null,
     "price": 11.9,
     "cats": "Суши"
   },
   {
     "id": 212,
     "title": "Ясай маки",
-    "price_sale": "",
+    "price_sale": null,
     "price": 6.9,
     "cats": "Суши"
   },
   {
     "id": 215,
     "title": "Самуро",
-    "price_sale": "",
+    "price_sale": null,
     "price": 10.9,
     "cats": "Суши"
   },
   {
     "id": 217,
     "title": "Канада",
-    "price_sale": "",
+    "price_sale": null,
     "price": 12.3,
     "cats": "Суши"
   },
   {
     "id": 219,
     "title": "Канада с лососем",
-    "price_sale": "",
+    "price_sale": null,
     "price": 12.3,
     "cats": "Суши"
   },
@@ -205,21 +205,21 @@
   {
     "id": 274,
     "title": "Морская - 30см",
-    "price_sale": "",
+    "price_sale": null,
     "price": 18,
     "cats": "Пицца"
   },
   {
     "id": 275,
     "title": "Морская - 40см",
-    "price_sale": "",
+    "price_sale": null,
     "price": 32,
     "cats": "Пицца"
   },
   {
     "id": 276,
     "title": "Морская - 50см",
-    "price_sale": "",
+    "price_sale": null,
     "price": 37,
     "cats": "Пицца"
   },
@@ -247,119 +247,119 @@
   {
     "id": 804,
     "title": "Салат «Цезарь с сёмгой и помидором»",
-    "price_sale": "",
+    "price_sale": null,
     "price": 9.9,
     "cats": "Cалат"
   },
   {
     "id": 806,
     "title": "Салат «Цезарь с курицей»",
-    "price_sale": "",
+    "price_sale": null,
     "price": 8.9,
     "cats": "Cалат"
   },
   {
     "id": 2952,
     "title": "Запечёные суши с угрём",
-    "price_sale": "",
+    "price_sale": null,
     "price": 9.9,
     "cats": "Суши"
   },
   {
     "id": 2954,
     "title": "Запечёные суши с лососем",
-    "price_sale": "",
+    "price_sale": null,
     "price": 9.9,
     "cats": "Суши"
   },
   {
     "id": 2955,
     "title": "Салат с телятиной",
-    "price_sale": "",
+    "price_sale": null,
     "price": 9.9,
     "cats": "Cалат"
   },
   {
     "id": 2957,
     "title": "Свинина на косточке на гриле",
-    "price_sale": "",
+    "price_sale": null,
     "price": 14.9,
     "cats": "Мясо"
   },
   {
     "id": 2959,
     "title": "Свинина на гриле",
-    "price_sale": "",
+    "price_sale": null,
     "price": 14.9,
     "cats": "Мясо"
   },
   {
     "id": 2961,
     "title": "Курица на гриле",
-    "price_sale": "",
+    "price_sale": null,
     "price": 12.9,
     "cats": "Мясо"
   },
   {
     "id": 2963,
     "title": "Чизкейк классический",
-    "price_sale": "",
+    "price_sale": null,
     "price": 4.5,
     "cats": "Десерты"
   },
   {
     "id": 2965,
     "title": "Чизкейк \"Орео",
-    "price_sale": "",
+    "price_sale": null,
     "price": 4.5,
     "cats": "Десерты"
   },
   {
     "id": 2966,
     "title": "Мороженое",
-    "price_sale": "",
+    "price_sale": null,
     "price": 4.9,
     "cats": "Десерты"
   },
   {
     "id": 2968,
     "title": "Спагетти карбонара",
-    "price_sale": "",
+    "price_sale": null,
     "price": 9.2,
     "cats": "Спагетти"
   },
   {
     "id": 2970,
     "title": "Спагетти с соусом болоньезе",
-    "price_sale": "",
+    "price_sale": null,
     "price": 9.8,
     "cats": "Спагетти"
   },
   {
     "id": 3012,
     "title": "Спагетти c овощами",
-    "price_sale": "",
+    "price_sale": null,
     "price": 7.9,
     "cats": "Спагетти"
   },
   {
     "id": 3017,
     "title": "Туркменская - 30см",
-    "price_sale": "",
+    "price_sale": null,
     "price": 14.9,
     "cats": "Пицца"
   },
   {
     "id": 3018,
     "title": "Туркменская - 40см",
-    "price_sale": "",
+    "price_sale": null,
     "price": 22.5,
     "cats": "Пицца"
   },
   {
     "id": 3019,
     "title": "Туркменская - 50см",
-    "price_sale": "",
+    "price_sale": null,
     "price": 27,
     "cats": "Пицца"
   },
@@ -401,7 +401,7 @@
   {
     "id": 3029,
     "title": "Техасская - 50см",
-    "price_sale": "",
+    "price_sale": null,
     "price": 27.9,
     "cats": "Пицца"
   },
@@ -618,602 +618,670 @@
   {
     "id": 3197,
     "title": "Таджикская - 30см",
-    "price_sale": "",
+    "price_sale": null,
     "price": 15.9,
     "cats": "Пицца"
   },
   {
     "id": 3198,
     "title": "Таджикская - 40см",
-    "price_sale": "",
+    "price_sale": null,
     "price": 25.5,
     "cats": "Пицца"
   },
   {
     "id": 3199,
     "title": "Таджикская - 50см",
-    "price_sale": "",
+    "price_sale": null,
     "price": 31,
     "cats": "Пицца"
   },
   {
     "id": 3201,
     "title": "С лососем - 30см",
-    "price_sale": "",
+    "price_sale": null,
     "price": 18,
     "cats": "Пицца"
   },
   {
     "id": 3202,
     "title": "С лососем - 40см",
-    "price_sale": "",
+    "price_sale": null,
     "price": 32,
     "cats": "Пицца"
   },
   {
     "id": 3203,
     "title": "С лососем - 50см",
-    "price_sale": "",
+    "price_sale": null,
     "price": 37,
     "cats": "Пицца"
   },
   {
     "id": 6022,
     "title": "Мясной Бум",
-    "price_sale": "",
+    "price_sale": null,
     "price": 27,
     "cats": "Пицца"
   },
   {
     "id": 4293,
     "title": "Бонус пицца",
-    "price_sale": "",
+    "price_sale": null,
     "price": 0,
     "cats": "Пицца"
   },
   {
     "id": 3336,
     "title": "Пицца за 6.90 руб",
-    "price_sale": "",
+    "price_sale": null,
     "price": 6.9,
     "cats": "Пицца"
   },
   {
     "id": 2907,
     "title": "4 сыра",
-    "price_sale": "",
+    "price_sale": null,
     "price": 14.9,
     "cats": "Пицца"
   },
   {
+    "id": 3339,
+    "title": "Пазл",
+    "price_sale": null,
+    "price": 15,
+    "cats": "Пицца"
+  },  {
+    "id": 3340,
+    "title": "Американский пазл",
+    "price_sale": null,
+    "price": 33,
+    "cats": "Пицца"
+  },  {
     "id": 3338,
     "title": "Комбо",
-    "price_sale": "",
+    "price_sale": null,
     "price": 35,
     "cats": "Пицца"
   },
   {
     "id": 3409,
     "title": "Соус горчичный",
-    "price_sale": "",
+    "price_sale": null,
     "price": 1,
     "cats": "Соусы"
   },
   {
     "id": 3410,
     "title": "Соус чесночный",
-    "price_sale": "",
+    "price_sale": null,
     "price": 1,
     "cats": "Соусы"
   },
   {
     "id": 3411,
     "title": "Соус кисло-сладкий",
-    "price_sale": "",
+    "price_sale": null,
     "price": 1,
     "cats": "Соусы"
   },
   {
     "id": 3412,
     "title": "Соус барбекю",
-    "price_sale": "",
+    "price_sale": null,
     "price": 1,
     "cats": "Соусы"
   },
   {
     "id": 3413,
     "title": "Соус сырный",
-    "price_sale": "",
+    "price_sale": null,
     "price": 1,
     "cats": "Соусы"
   },
   {
     "id": 3587,
     "title": "Кола 1л",
-    "price_sale": "",
+    "price_sale": null,
     "price": 2,
     "cats": "Напитки"
   },
   {
     "id": 3734,
     "title": "Грибы 80гр",
-    "price_sale": "",
+    "price_sale": null,
     "price": 1.5,
     "cats": "Добавки к пицце"
   },
   {
     "id": 3736,
     "title": "Помидор 50гр",
-    "price_sale": "",
+    "price_sale": null,
     "price": 1.5,
     "cats": "Добавки к пицце"
   },
   {
     "id": 3737,
     "title": "Перец болгарский 40гр",
-    "price_sale": "",
+    "price_sale": null,
     "price": 1.5,
     "cats": "Добавки к пицце"
   },
   {
     "id": 3738,
     "title": "Сыр 80гр",
-    "price_sale": "",
+    "price_sale": null,
     "price": 1.5,
     "cats": "Добавки к пицце"
   },
   {
     "id": 3739,
     "title": "Оливки 15гр",
-    "price_sale": "",
+    "price_sale": null,
     "price": 0.6,
     "cats": "Добавки к пицце"
   },
   {
     "id": 3741,
     "title": "Маслины 15гр",
-    "price_sale": "",
+    "price_sale": null,
     "price": 0.6,
     "cats": "Добавки к пицце"
   },
   {
     "id": 3861,
     "title": "Соевый соус",
-    "price_sale": "",
+    "price_sale": null,
     "price": 0.5,
     "cats": "Добавки к суши"
   },
   {
     "id": 3862,
     "title": "Имбирь",
-    "price_sale": "",
+    "price_sale": null,
     "price": 0.5,
     "cats": "Добавки к суши"
   },
   {
     "id": 3863,
     "title": "Палочки для суши",
-    "price_sale": "",
+    "price_sale": null,
     "price": 0.5,
     "cats": "Добавки к суши"
   },
   {
     "id": 3864,
     "title": "Вассаби",
-    "price_sale": "",
+    "price_sale": null,
     "price": 0.5,
     "cats": "Добавки к суши"
   },
   {
     "id": 3948,
     "title": "Суши сет",
-    "price_sale": "",
+    "price_sale": null,
     "price": 11.99,
     "cats": "Суши"
   },
   {
     "id": 4294,
     "title": "Бонус суши",
-    "price_sale": "",
+    "price_sale": null,
     "price": 0,
     "cats": "Суши"
   },
   {
     "id": 5653,
     "title": "Соус терияки",
-    "price_sale": "",
+    "price_sale": null,
     "price": 1.5,
     "cats": "Соусы"
   },
   {
     "id": 5654,
     "title": "Соус кунжутно-ореховый",
-    "price_sale": "",
+    "price_sale": null,
     "price": 1.5,
     "cats": "Соусы"
   },
   {
     "id": 5655,
     "title": "Салат Греческий",
-    "price_sale": "",
+    "price_sale": null,
     "price": 8.9,
     "cats": "Cалат"
   },
   {
     "id": 5656,
     "title": "Салат Горячий из овощей",
-    "price_sale": "",
+    "price_sale": null,
     "price": 8.5,
     "cats": "Cалат"
   },
   {
     "id": 5658,
     "title": "Спагетти с морепродуктами",
-    "price_sale": "",
+    "price_sale": null,
     "price": 17.2,
     "cats": "Спагетти"
   },
   {
     "id": 5660,
     "title": "Спагетти с сёмгой",
-    "price_sale": "",
+    "price_sale": null,
     "price": 15.2,
     "cats": "Спагетти"
   },
   {
     "id": 7960,
     "title": "Сет запечёный",
-    "price_sale": "",
+    "price_sale": null,
     "price": 26,
     "cats": "Суши"
   },
   {
     "id": 9063,
     "title": "Соус Барбекю 50г",
-    "price_sale": "",
+    "price_sale": null,
     "price": 1,
     "cats": "Добавки к пицце"
   },
   {
     "id": 9064,
     "title": "Соус Чесночный 50г",
-    "price_sale": "",
+    "price_sale": null,
     "price": 1,
     "cats": "Добавки к пицце"
   },
   {
     "id": 9065,
     "title": "Соус Сырный 50г",
-    "price_sale": "",
+    "price_sale": null,
     "price": 1,
     "cats": "Добавки к пицце"
   },
   {
     "id": 9066,
     "title": "Соус Горчичный 50г",
-    "price_sale": "",
+    "price_sale": null,
     "price": 1,
     "cats": "Добавки к пицце"
   },
   {
     "id": 9067,
     "title": "Соус Кисло-сладкий 50г",
-    "price_sale": "",
+    "price_sale": null,
     "price": 1,
     "cats": "Добавки к пицце"
   },
   {
     "id": 9068,
     "title": "Соус Острый(шрирача) 15г",
-    "price_sale": "",
+    "price_sale": null,
     "price": 1.5,
     "cats": "Добавки к пицце, Добавки к суши"
+  },  
+  {
+    "id": 9134,
+    "title": "Сырный борт малый",
+    "price_sale": null,
+    "price": 3,
+    "cats": "Добавки к пицце"
+  },  
+  {
+    "id": 9135,
+    "title": "Сырный борт большой",
+    "price_sale": null,
+    "price": 5,
+    "cats": "Добавки к пицце"
+  },  
+  {
+    "id": 9136,
+    "title": "Колбасный борт малый",
+    "price_sale": null,
+    "price": 4,
+    "cats": "Добавки к пицце"
+  },  
+  {
+    "id": 9137,
+    "title": "Колбасный борт большой",
+    "price_sale": null,
+    "price": 7,
+    "cats": "Добавки к пицце"
+  },  
+  {
+    "id": 9138,
+    "title": "Сыр дор блю малый",
+    "price_sale": null,
+    "price": 5,
+    "cats": "Добавки к пицце"
+  },  
+  {
+    "id": 9139,
+    "title": "Сыр дор блю большой",
+    "price_sale": null,
+    "price": 9,
+    "cats": "Добавки к пицце"
+  },  
+  {
+    "id": 9140,
+    "title": "Сыр пармезан малый",
+    "price_sale": null,
+    "price": 4,
+    "cats": "Добавки к пицце"
+  },  
+  {
+    "id": 9141,
+    "title": "Сыр пармезан большой",
+    "price_sale": null,
+    "price": 7,
+    "cats": "Добавки к пицце"
   },
   {
     "id": 9070,
     "title": "Соус Терияки 30г",
-    "price_sale": "",
+    "price_sale": null,
     "price": 1.5,
     "cats": "Добавки к суши"
   },
   {
     "id": 9071,
     "title": "Соус Кунжутно-ореховый 30г",
-    "price_sale": "",
+    "price_sale": null,
     "price": 1.5,
     "cats": "Добавки к суши"
   },
   {
     "id": 9073,
     "title": "Фанта 0,25л",
-    "price_sale": "",
+    "price_sale": null,
     "price": 1.9,
     "cats": "Напитки"
   },
   {
     "id": 9074,
     "title": "Спрайт 0,25л",
-    "price_sale": "",
+    "price_sale": null,
     "price": 1.9,
     "cats": "Напитки"
   },
   {
     "id": 9075,
     "title": "Кока-кола 0,25л",
-    "price_sale": "",
+    "price_sale": null,
     "price": 1.9,
     "cats": "Напитки"
   },
   {
     "id": 9076,
     "title": "Бонаква 0,33л",
-    "price_sale": "",
+    "price_sale": null,
     "price": 1.5,
     "cats": "Напитки"
   },
   {
     "id": 9077,
     "title": "Молочный коктейль 0,25л",
-    "price_sale": "",
+    "price_sale": null,
     "price": 4,
     "cats": "Напитки"
   },
   {
     "id": 9078,
     "title": "Чай пакетированный",
-    "price_sale": "",
+    "price_sale": null,
     "price": 2,
     "cats": "Напитки"
   },
   {
     "id": 9080,
     "title": "Сок 0.2 л апельсиновый",
-    "price_sale": "",
+    "price_sale": null,
     "price": 1.8,
     "cats": "Напитки"
   },
   {
     "id": 9081,
     "title": "Сок 0.2 л томатный",
-    "price_sale": "",
+    "price_sale": null,
     "price": 1.8,
     "cats": "Напитки"
   },
   {
     "id": 9082,
     "title": "Сок 0.2 л яблочный",
-    "price_sale": "",
+    "price_sale": null,
     "price": 1.8,
     "cats": "Напитки"
   },
   {
     "id": 9083,
     "title": "Сок 0.2 л вишнёвый",
-    "price_sale": "",
+    "price_sale": null,
     "price": 1.8,
     "cats": "Напитки"
   },
   {
     "id": 9084,
     "title": "Кофе по венски",
-    "price_sale": "",
+    "price_sale": null,
     "price": 3,
     "cats": "Напитки"
   },
   {
     "id": 9085,
     "title": "Эспрессо",
-    "price_sale": "",
+    "price_sale": null,
     "price": 2,
     "cats": "Напитки"
   },
   {
     "id": 9086,
     "title": "Американо",
-    "price_sale": "",
+    "price_sale": null,
     "price": 2.5,
     "cats": "Напитки"
   },
   {
     "id": 9087,
     "title": "Капучино",
-    "price_sale": "",
+    "price_sale": null,
     "price": 3,
     "cats": "Напитки"
   },
   {
     "id": 9088,
     "title": "Латте",
-    "price_sale": "",
+    "price_sale": null,
     "price": 3.5,
     "cats": "Напитки"
   },
   {
     "id": 9092,
     "title": "Коньяк \"Араспел\" трёхлетний - 50 гр",
-    "price_sale": "",
+    "price_sale": null,
     "price": 3,
     "cats": "Алкоголь"
   },
   {
     "id": 9093,
     "title": "Коньяк \"Араспел\" трёхлетний - Бутылка",
-    "price_sale": "",
+    "price_sale": null,
     "price": 30,
     "cats": "Алкоголь"
   },
   {
     "id": 9095,
     "title": "Виски Шотландский \"Олд смагглер\" - 50 гр",
-    "price_sale": "",
+    "price_sale": null,
     "price": 4,
     "cats": "Алкоголь"
   },
   {
     "id": 9096,
     "title": "Виски Шотландский \"Олд смагглер\" - Бутылка",
-    "price_sale": "",
+    "price_sale": null,
     "price": 56,
     "cats": "Алкоголь"
   },
   {
     "id": 9098,
     "title": "Коньяк \"Араспел\" пятилетний - 50 гр",
-    "price_sale": "",
+    "price_sale": null,
     "price": 3.6,
     "cats": "Алкоголь"
   },
   {
     "id": 9099,
     "title": "Коньяк \"Араспел\" пятилетний - Бутылка",
-    "price_sale": "",
+    "price_sale": null,
     "price": 36,
     "cats": "Алкоголь"
   },
   {
     "id": 9101,
     "title": "Ром \"Эль Дьябло\" - 50 гр",
-    "price_sale": "",
+    "price_sale": null,
     "price": 3,
     "cats": "Алкоголь"
   },
   {
     "id": 9102,
     "title": "Ром \"Эль Дьябло\" - Бутылка",
-    "price_sale": "",
+    "price_sale": null,
     "price": 30,
     "cats": "Алкоголь"
   },
   {
     "id": 9104,
     "title": "Водка \"Сваяк стандарт\" - 50 гр",
-    "price_sale": "",
+    "price_sale": null,
     "price": 1.8,
     "cats": "Алкоголь"
   },
   {
     "id": 9105,
     "title": "Водка \"Сваяк стандарт\" - Бутылка",
-    "price_sale": "",
+    "price_sale": null,
     "price": 18,
     "cats": "Алкоголь"
   },
   {
     "id": 9107,
     "title": "Кастильо кюве де принцес\" п/сл белое - 150 гр",
-    "price_sale": "",
+    "price_sale": null,
     "price": 4.2,
     "cats": "Алкоголь"
   },
   {
     "id": 9108,
     "title": "Кастильо кюве де принцес\" п/сл белое - Бутылка",
-    "price_sale": "",
+    "price_sale": null,
     "price": 21,
     "cats": "Алкоголь"
   },
   {
     "id": 9110,
     "title": "Кастильо кюве де принцес\" п/сл красное - 150 гр",
-    "price_sale": "",
+    "price_sale": null,
     "price": 4.2,
     "cats": "Алкоголь"
   },
   {
     "id": 9111,
     "title": "Кастильо кюве де принцес\" п/сл красное - Бутылка",
-    "price_sale": "",
+    "price_sale": null,
     "price": 21,
     "cats": "Алкоголь"
   },
   {
     "id": 9113,
     "title": "Фолонари верона\" п/сух красное - 150 гр",
-    "price_sale": "",
+    "price_sale": null,
     "price": 4.2,
     "cats": "Алкоголь"
   },
   {
     "id": 9114,
     "title": "Фолонари верона\" п/сух красное - Бутылка",
-    "price_sale": "",
+    "price_sale": null,
     "price": 21,
     "cats": "Алкоголь"
   },
   {
     "id": 9116,
     "title": "Фолонари пино гриджио\" п/сух белое - 150 гр",
-    "price_sale": "",
+    "price_sale": null,
     "price": 4.2,
     "cats": "Алкоголь"
   },
   {
     "id": 9117,
     "title": "Фолонари пино гриджио\" п/сух белое - Бутылка",
-    "price_sale": "",
+    "price_sale": null,
     "price": 21,
     "cats": "Алкоголь"
   },
   {
     "id": 9119,
     "title": "Луи эшенауэр каберне савиньон\" сух красное - 150 гр",
-    "price_sale": "",
+    "price_sale": null,
     "price": 4.2,
     "cats": "Алкоголь"
   },
   {
     "id": 9120,
     "title": "Луи эшенауэр каберне савиньон\" сух красное - Бутылка",
-    "price_sale": "",
+    "price_sale": null,
     "price": 21,
     "cats": "Алкоголь"
   },
   {
     "id": 9122,
     "title": "Луи эшенауэр шардоне\" сух белое - 150 гр",
-    "price_sale": "",
+    "price_sale": null,
     "price": 4.2,
     "cats": "Алкоголь"
   },
   {
     "id": 9123,
     "title": "Луи эшенауэр шардоне\" сух белое - Бутылка",
-    "price_sale": "",
+    "price_sale": null,
     "price": 21,
     "cats": "Алкоголь"
   },
   {
     "id": 9124,
     "title": "Советское шампанское\" п/сл",
-    "price_sale": "",
+    "price_sale": null,
     "price": 12,
     "cats": "Алкоголь"
   },
   {
     "id": 9127,
     "title": "Советское шампанское\" п/сух",
-    "price_sale": "",
+    "price_sale": null,
     "price": 12,
     "cats": "Алкоголь"
   },
   {
     "id": 9131,
     "title": "Пиво светлое 0.5",
-    "price_sale": "",
+    "price_sale": null,
     "price": 3.3,
     "cats": "Алкоголь"
   },
   {
     "id": 9132,
     "title": "Пиво тёмное 0.5",
-    "price_sale": "",
+    "price_sale": null,
     "price": 3.3,
     "cats": "Алкоголь"
   },
   {
     "id": 9133,
     "title": "Пиво нефильтрованное 0.5",
-    "price_sale": "",
+    "price_sale": null,
     "price": 3.3,
     "cats": "Алкоголь"
   }
