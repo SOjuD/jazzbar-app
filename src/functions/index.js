@@ -162,19 +162,39 @@ const buildCheque = (table)=>{
     const WinPrint = window.open('','','left=50,top=50,width=800,height=640,toolbar=0,scrollbars=1,status=0');
     const CSS = `
           <style>
-            *{
-              font-size: 20px;
-              line-height: 1.8;
-            }
             img {
             display: block;
             margin: 0 auto;
+            max-width: 100%;
+            height: 100px;
             }
-            ul{
+            table{
                 border-bottom: 2px solid #c4c4c4;
                 border-top: 2px solid #c4c4c4;
-                padding: 30px 20px 30px 50px;
+                padding: 30px 0;
                 margin: 30px 0;
+                width: 100%;
+            }
+            table * {
+                text-align: left;
+                font-size: 14px;
+            }
+            td{
+                padding: 6px 0; 
+            }
+            td[colspan="4"]{
+                font-style: italic;
+            }
+            .chequeToPrint > div {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                padding: 4px 0;
+                margin: 4px 0;
+                border-bottom: 1px solid #c4c4c4;
+            }       
+            .chequeToPrint > div:last-child{
+                border-bottom: none;
             }
         </style>`;
     WinPrint.document.write(CSS);
@@ -182,8 +202,8 @@ const buildCheque = (table)=>{
     ReactDOM.render(<ChequeToPrint table={table} />,
         WinPrint.document.getElementById('root'));
     WinPrint.focus();
-    WinPrint.print();
-    WinPrint.close();
+    // WinPrint.print();
+    // WinPrint.close();
 
 }
 
