@@ -202,8 +202,8 @@ const buildCheque = (table)=>{
     ReactDOM.render(<ChequeToPrint table={table} />,
         WinPrint.document.getElementById('root'));
     WinPrint.focus();
-    // WinPrint.print();
-    // WinPrint.close();
+    WinPrint.print();
+    WinPrint.close();
 
 }
 
