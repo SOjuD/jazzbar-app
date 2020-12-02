@@ -6,7 +6,7 @@ import {
     updateTables,
     togledModalDescription,
     closeTable,
-    setSessionStorage} from '../functions';
+    setLocalStorage} from '../functions';
 
 const reducer = (state = initialState, action) => {
     let tableIndex,newTable, tables;
@@ -23,7 +23,7 @@ const reducer = (state = initialState, action) => {
             tableIndex = state.tables.findIndex( el => el.id === action.tableId);
             newTable = calcTableTotal(state.tables[tableIndex], action.sale);
             tables = updateTables(state.tables, newTable, tableIndex);
-            return setSessionStorage({
+            return setLocalStorage({
                 ...state,
                 tables
             });
@@ -31,7 +31,7 @@ const reducer = (state = initialState, action) => {
             tableIndex = state.tables.findIndex( el => el.id === action.tableId);
             newTable = updateTableList( state, tableIndex, action);
             tables = updateTables(state.tables, newTable, tableIndex);
-            return setSessionStorage({
+            return setLocalStorage({
                 ...state,
                 tables
             });
@@ -41,12 +41,12 @@ const reducer = (state = initialState, action) => {
             tableIndex = state.tables.findIndex( el => el.id === action.tableId);
             newTable = updateTableList( state, tableIndex, action);
             tables = updateTables(state.tables, newTable, tableIndex);
-            return setSessionStorage({
+            return setLocalStorage({
                 ...state,
                 tables
             });
         case 'CLOSED_TABLE':
-            return setSessionStorage(closeTable(state, action.tableId))
+            return setLocalStorage(closeTable(state, action.tableId))
         default :
             return state;
     }
