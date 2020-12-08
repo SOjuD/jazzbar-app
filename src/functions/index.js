@@ -7,10 +7,10 @@ const roundToTwo = (num) => {
     return +(Math.round(num + "e+2") + "e-2");
 }
 
-const setSessionStorage = (state) => {
+const setLocalStorage = (state) => {
     const {tables, total} = state
-    window.sessionStorage.setItem('tables', JSON.stringify(tables));
-    window.sessionStorage.setItem('total', total);
+    window.localStorage.setItem('tables', JSON.stringify(tables));
+    window.localStorage.setItem('total', total);
     return state
 }
 
@@ -246,6 +246,6 @@ export {
     togledModalDescription,
     closeTable,
     buildCheque,
-    setSessionStorage
+    setLocalStorage
 
 }

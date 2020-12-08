@@ -135,10 +135,10 @@ const newtTables = [
     },
 
 ];
-const sessionTables = JSON.parse(window.sessionStorage.getItem('tables'));
-const tables = sessionTables || newtTables;
+const localTables = JSON.parse(window.localStorage.getItem('tables'));
+const tables = localTables || newtTables;
 
-const total = window.sessionStorage.getItem('total') || 0;
+const total = window.localStorage.getItem('total') || 0;
 
 const initialState = {
     loading: true,
