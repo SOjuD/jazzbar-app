@@ -6,6 +6,7 @@ import {buildCheque} from '../../functions';
 import {withTable} from '../hoc';
 
 const TableChequeBtns = (props) => {
+    console.log(props)
     const {id, closedTable} = props;
     return(
         <div className="row tablePage-cheque-btns">

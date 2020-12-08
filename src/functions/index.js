@@ -163,10 +163,10 @@ const buildCheque = (table)=>{
     const CSS = `
           <style>
             img {
-            display: block;
-            margin: 0 auto;
-            max-width: 100%;
-            height: 100px;
+                display: block;
+                margin: 0 auto;
+                max-width: 100%;
+                height: 200px;
             }
             table{
                 border-bottom: 2px solid #c4c4c4;
@@ -175,12 +175,17 @@ const buildCheque = (table)=>{
                 margin: 30px 0;
                 width: 100%;
             }
-            table * {
+            * {
                 text-align: left;
-                font-size: 14px;
+                font-size: 32px;
             }
             td{
                 padding: 6px 0; 
+            }
+            td:nth-child(2),
+            td:nth-child(3),
+            td:nth-child(4){
+                width: 150px;
             }
             td[colspan="4"]{
                 font-style: italic;
@@ -203,7 +208,7 @@ const buildCheque = (table)=>{
         WinPrint.document.getElementById('root'));
     WinPrint.focus();
     WinPrint.print();
-    WinPrint.close();
+    // WinPrint.close();
 }
 
 const closeTable = (state, tableId) => {
@@ -246,6 +251,6 @@ export {
     togledModalDescription,
     closeTable,
     buildCheque,
-    setLocalStorage
+    setLocalStorage,
 
 }

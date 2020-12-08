@@ -1,12 +1,14 @@
 import React from "react";
 
+import {roundToTwo} from '../../functions';
+
 const ChequeToPrintItem = ({item}) => {
     const {title, count, total, description} = item;
     return(
         <>
             <tr>
                 <td>{title}</td>
-                <td>{total/count} р.</td>
+                <td>{roundToTwo(total/count)} р.</td>
                 <td>{count} шт.</td>
                 <td>{total} р.</td>
             </tr>

@@ -18,9 +18,11 @@ const ChequeToPrint = ({table}) => {
                         <th>Итого</th>
                     </tr>
                 </thead>
-                {
-                    list.map( item => <ChequeToPrintItem item={item} key={item.id} />)
-                }
+                <tbody>
+                    {
+                        list.map( item => <ChequeToPrintItem item={item} key={item.id} />)
+                    }
+                </tbody>
             </table>
             <div className="chequeToPrint-title">
                 <div>Стол: </div>
