@@ -5,7 +5,8 @@ import ChequeToPrintItem from "./cheque-to-print-item";
 
 
 const ChequeToPrint = ({table}) => {
-    const {name, list, subtotal, saleCapacity, total} = table;
+    console.log()
+    const {name, list, subtotal, saleCapacity, total, sale} = table;
     return (
         <div className="chequeToPrint">
             <img src={logo} className="chequeToPrint-logo" alt="jazzCafe"/>
@@ -31,6 +32,10 @@ const ChequeToPrint = ({table}) => {
             <div className="chequeToPrint-subtotal">
                 <div>Подытог:</div>
                 <div>{subtotal} р.</div>
+            </div>
+            <div className="chequeToPrint-sale">
+                <div>Процент скидки:</div>
+                <div>{sale}%</div>
             </div>
             <div className="chequeToPrint-sale">
                 <div>Скидка:</div>

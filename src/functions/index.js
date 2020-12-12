@@ -94,7 +94,8 @@ const updateTableListItem = (tableId, productInList = {}, product, productCount,
     if(productCount === undefined) count += 1;
     else count += productCount;
 
-    const price = tableId !== 'pickup-table' ? product.price : product['price_sale'] || product.price;
+
+    const price = tableId.indexOf('pickup-table') === -1 ? product.price : product['price_sale'] || product.price;
 
     return  {
         id: id,
@@ -214,7 +215,7 @@ const buildCheque = (table)=>{
 const closeTable = (state, tableId) => {
     const {tables} = state;
     const tableIndex = tables.findIndex(el => el.id === tableId);
-    const total = +state.total + +tables[tableIndex].total;
+    const total = roundToTwo(+state.total + +tables[tableIndex].total);
 
     buildCheque(tables[tableIndex]);
 

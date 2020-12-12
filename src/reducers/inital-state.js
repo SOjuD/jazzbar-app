@@ -125,8 +125,80 @@ const newtTables = [
         total: 0
     },
     {
-        id: 'pickup-table',
-        name: "Самовывоз",
+        id: 'table-15',
+        name: "Стол 15",
+        list: [],
+        subtotal: 0,
+        sale: 0,
+        saleCapacity: 0,
+        total: 0
+    },
+    {
+        id: 'pickup-table-1',
+        name: "Самовывоз 1",
+        list: [],
+        subtotal: 0,
+        sale: 0,
+        saleCapacity: 0,
+        total: 0
+    },
+    {
+        id: 'pickup-table-2',
+        name: "Самовывоз 2",
+        list: [],
+        subtotal: 0,
+        sale: 0,
+        saleCapacity: 0,
+        total: 0
+    },
+    {
+        id: 'pickup-table-3',
+        name: "Самовывоз 3",
+        list: [],
+        subtotal: 0,
+        sale: 0,
+        saleCapacity: 0,
+        total: 0
+    },
+    {
+        id: 'pickup-table-4',
+        name: "Самовывоз 4",
+        list: [],
+        subtotal: 0,
+        sale: 0,
+        saleCapacity: 0,
+        total: 0
+    },
+    {
+        id: 'pickup-table-5',
+        name: "Самовывоз 5",
+        list: [],
+        subtotal: 0,
+        sale: 0,
+        saleCapacity: 0,
+        total: 0
+    },
+    {
+        id: 'pickup-table-6',
+        name: "Самовывоз 6",
+        list: [],
+        subtotal: 0,
+        sale: 0,
+        saleCapacity: 0,
+        total: 0
+    },
+    {
+        id: 'pickup-table-7',
+        name: "Самовывоз 7",
+        list: [],
+        subtotal: 0,
+        sale: 0,
+        saleCapacity: 0,
+        total: 0
+    },
+    {
+        id: 'pickup-table-8',
+        name: "Самовывоз 8",
         list: [],
         subtotal: 0,
         sale: 0,
