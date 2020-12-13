@@ -5,16 +5,26 @@ import Delete from "../delete";
 import plus from './svg/plus.svg'
 import minus from './svg/minus.svg'
 
-const TableChequeListItem = ({title, count, total,
+const TableChequeListItem = ({title, count, total, isPrint,
                              id: productId, tableId, productAddedToCheque,
-                             togledModalDescription}) => {
+                             togledModalDescription, togledIsPrint}) => {
+    
+
+    const changeIsPrint = ({target}) => togledIsPrint(tableId, productId, target.checked)
     return(
         <div className="row">
+            <div className="col-1 tableList-isPrint">
+                <input 
+                type="checkbox"
+                name="isPrint"
+                checked={isPrint}
+                onChange={changeIsPrint} />
+            </div>
             <div className="col-5 tableList-title"
                 onClick={()=>{togledModalDescription(tableId, productId)}}>
                 {title}
             </div>
-            <div className="col-4 d-flex justify-content-around align-items-center">
+            <div className="col-3 d-flex justify-content-around align-items-center">
                 <img
                     alt='plus'
                     src={plus}

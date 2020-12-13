@@ -77,19 +77,33 @@ const updateTableListItems = (table, newProduct, productIndexInList) => {
     }
 }
 
-const updateTableListItem = (tableId, productInList = {}, product, productCount, newDescription) => {
+const updateTableListItem = (...params) => {
 
+    const [
+        tableId, 
+        productInList = {}, 
+        product, 
+        productCount, 
+        newDescription, 
+        isPrint] = params;
+    console.log(params)
     if(newDescription !== undefined) {
         return {
             ...productInList,
             description: newDescription
         }
     }
+    if(isPrint) {
+        return {
+            ...productInList,
+            isPrint
+        }
+    }
     let{
         id = product.id,
         title = product.title,
         count = 0,
-        description = undefined} = productInList;
+        description = product.description} = productInList;
 
     if(productCount === undefined) count += 1;
     else count += productCount;
@@ -102,18 +116,19 @@ const updateTableListItem = (tableId, productInList = {}, product, productCount,
         title: title,
         count: count,
         total: roundToTwo(count * price),
-        description: description
+        description: description,
+        isPrint: false
     }
 }
 
 const updateTableList = ({products, tables}, tableIndex, action) => {
-    const {productId, productCount, description, tableId} = action;
+    const {productId, productCount, description, tableId, isPrint} = action;
     const table = tables[tableIndex];
     const productIndexInList = table.list.findIndex( el => +el.id === +productId);
     const productInList = table.list[productIndexInList];
     let product = findProduct(products, productId);
 
-    let newProduct = updateTableListItem(tableId, productInList, product, productCount, description);
+    let newProduct = updateTableListItem(tableId, productInList, product, productCount, description, isPrint);
 
     let newTable = updateTableListItems(table, newProduct, productIndexInList);
     newTable = calcTableSubtotal(newTable);
@@ -239,6 +254,16 @@ const closeTable = (state, tableId) => {
     };
 }
 
+const updateProducts = (state, action) => {
+    const tableIndex = state.tables.findIndex( el => el.id === action.tableId);
+    const newTable = updateTableList( state, tableIndex, action);
+    const tables = updateTables(state.tables, newTable, tableIndex);
+    return setLocalStorage({
+        ...state,
+        tables
+    });
+}
+
 export {
     roundToTwo,
     calcTableSubtotal,
@@ -253,5 +278,6 @@ export {
     closeTable,
     buildCheque,
     setLocalStorage,
+    updateProducts
 
 }

@@ -1,12 +1,12 @@
 import initialState from "./inital-state";
 import {
     calcTableTotal,
-    updateTableList,
     sortProducts,
     updateTables,
     togledModalDescription,
     closeTable,
-    setLocalStorage} from '../functions';
+    setLocalStorage,
+    updateProducts} from '../functions';
 
 const reducer = (state = initialState, action) => {
     let tableIndex,newTable, tables;
@@ -27,24 +27,12 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 tables
             });
+            case 'TOGLED_MODAL_DESCRIPTION':
+                return togledModalDescription(state, action);
         case 'PRODUCT_ADDED_TO_CHEQUE':
-            tableIndex = state.tables.findIndex( el => el.id === action.tableId);
-            newTable = updateTableList( state, tableIndex, action);
-            tables = updateTables(state.tables, newTable, tableIndex);
-            return setLocalStorage({
-                ...state,
-                tables
-            });
-        case 'TOGLED_MODAL_DESCRIPTION':
-           return togledModalDescription(state, action);
         case 'CHANGED_PRODUCT_DESCRIPTION':
-            tableIndex = state.tables.findIndex( el => el.id === action.tableId);
-            newTable = updateTableList( state, tableIndex, action);
-            tables = updateTables(state.tables, newTable, tableIndex);
-            return setLocalStorage({
-                ...state,
-                tables
-            });
+        case 'TOGLED_IS_PRINT':
+            return updateProducts(state, action)
         case 'CLOSED_TABLE':
             return setLocalStorage(closeTable(state, action.tableId))
         default :

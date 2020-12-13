@@ -30,6 +30,15 @@ const togledModalDescription = (tableId, productId) => {
     }
 }
 
+const togledIsPrint = (tableId, productId, isPrint) => {
+    return {
+        type: 'TOGLED_IS_PRINT',
+        tableId,
+        productId,
+        isPrint
+    }
+}
+
 const changedProductDescription = (tableId, productId, description) => {
     return {
         type: 'CHANGED_PRODUCT_DESCRIPTION',
@@ -52,5 +61,6 @@ export {
     productAddedToCheque,
     togledModalDescription,
     changedProductDescription,
-    closedTable
+    closedTable,
+    togledIsPrint
 }

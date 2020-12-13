@@ -224,6 +224,27 @@
     "cats": "Пицца"
   },
   {
+    "id": 292,
+    "title": "С мидиями - 30см",
+    "price_sale": null,
+    "price": 13.9,
+    "cats": "Пицца"
+  },
+  {
+    "id": 293,
+    "title": "С мидиями - 40см",
+    "price_sale": null,
+    "price": 22.9,
+    "cats": "Пицца"
+  },
+  {
+    "id": 294,
+    "title": "С мидиями - 50см",
+    "price_sale": null,
+    "price": 27.9,
+    "cats": "Пицца"
+  },
+  {
     "id": 289,
     "title": "Острая - 30см",
     "price_sale": 10.8,
