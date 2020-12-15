@@ -7,6 +7,7 @@ import ErrorBoundry from "./components/error-boundry";
 
 import store from './store';
 
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.sass';
 

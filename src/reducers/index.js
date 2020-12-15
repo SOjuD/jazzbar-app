@@ -1,12 +1,14 @@
 import initialState from "./inital-state";
 import {
     calcTableTotal,
+
     sortProducts,
     updateTables,
     togledModalDescription,
     closeTable,
     setLocalStorage,
-    updateProducts} from '../functions';
+    updateProducts,
+    togleIsPrintAll} from '../functions';
 
 const reducer = (state = initialState, action) => {
     let tableIndex,newTable, tables;
@@ -33,6 +35,8 @@ const reducer = (state = initialState, action) => {
         case 'CHANGED_PRODUCT_DESCRIPTION':
         case 'TOGLED_IS_PRINT':
             return updateProducts(state, action)
+        case 'TOGLED_IS_PRINT_ALL':
+            return togleIsPrintAll(state, action)
         case 'CLOSED_TABLE':
             return setLocalStorage(closeTable(state, action.tableId))
         default :

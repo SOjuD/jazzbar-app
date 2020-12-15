@@ -3,10 +3,9 @@ import logo from './logo.svg';
 
 import ChequeToPrintItem from "./cheque-to-print-item";
 
-
 const ChequeToPrint = ({table}) => {
-    console.log()
     const {name, list, subtotal, saleCapacity, total, sale} = table;
+    const isPrintList = list.filter(el => el.isPrint);
     return (
         <div className="chequeToPrint">
             <img src={logo} className="chequeToPrint-logo" alt="jazzCafe"/>
@@ -21,7 +20,9 @@ const ChequeToPrint = ({table}) => {
                 </thead>
                 <tbody>
                     {
-                        list.map( item => <ChequeToPrintItem item={item} key={item.id} />)
+                        isPrintList.map( item => {
+                            return <ChequeToPrintItem item={item} key={item.id} />
+                        })
                     }
                 </tbody>
             </table>

@@ -86,14 +86,13 @@ const updateTableListItem = (...params) => {
         productCount, 
         newDescription, 
         isPrint] = params;
-    console.log(params)
     if(newDescription !== undefined) {
         return {
             ...productInList,
             description: newDescription
         }
     }
-    if(isPrint) {
+    if(isPrint !== undefined) {
         return {
             ...productInList,
             isPrint
@@ -264,6 +263,21 @@ const updateProducts = (state, action) => {
     });
 }
 
+const togleIsPrintAll = (state, {tableId, isPrint}) => {
+    const tableIndex = state.tables.findIndex( el => el.id === tableId);
+    const newTable = {...state.tables[tableIndex]};
+    newTable.list = newTable.list.map(el => {
+        el.isPrint = isPrint;
+        return el;
+    });
+    
+    const tables = updateTables(state.tables, newTable, tableIndex);
+    return setLocalStorage({
+        ...state,
+        tables
+    });
+}
+
 export {
     roundToTwo,
     calcTableSubtotal,
@@ -278,6 +292,6 @@ export {
     closeTable,
     buildCheque,
     setLocalStorage,
-    updateProducts
-
+    updateProducts,
+    togleIsPrintAll
 }
