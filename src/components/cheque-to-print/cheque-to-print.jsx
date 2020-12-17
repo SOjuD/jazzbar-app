@@ -2,10 +2,11 @@ import React from "react";
 import logo from './logo.svg';
 
 import ChequeToPrintItem from "./cheque-to-print-item";
+import {withOnlyPrintItems} from '../hoc';
+
 
 const ChequeToPrint = ({table}) => {
     const {name, list, subtotal, saleCapacity, total, sale} = table;
-    const isPrintList = list.filter(el => el.isPrint);
     return (
         <div className="chequeToPrint">
             <img src={logo} className="chequeToPrint-logo" alt="jazzCafe"/>
@@ -20,7 +21,7 @@ const ChequeToPrint = ({table}) => {
                 </thead>
                 <tbody>
                     {
-                        isPrintList.map( item => {
+                        list.map( item => {
                             return <ChequeToPrintItem item={item} key={item.id} />
                         })
                     }
@@ -54,4 +55,4 @@ const ChequeToPrint = ({table}) => {
     )
 }
 
-export default ChequeToPrint;
+export default withOnlyPrintItems(ChequeToPrint);
