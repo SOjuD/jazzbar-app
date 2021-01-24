@@ -1410,5 +1410,19 @@
     "price_sale": null,
     "price": 0.95,
     "cats": "Добавки к пицце"
+  },
+  {
+    "id": 9173,
+    "title": "Кофе по ирландски",
+    "price_sale": null,
+    "price": 5,
+    "cats": "Напитки"
+  },
+  {
+    "id": 9174,
+    "title": "Глинтвейн",
+    "price_sale": null,
+    "price": 4.9,
+    "cats": "Алкоголь"
   }
 ]
